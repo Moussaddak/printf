@@ -35,7 +35,7 @@ int _printf(const char *format, ...)
 				k++;
 			}
 		}
-		else if(flag)
+		if(flag)
 		{
 			_putchar(format[i]);
 		}
