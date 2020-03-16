@@ -26,7 +26,7 @@ int _printf(const char *format, ...)
 		{
 			while (k < 2 && flag)
 			{
-				if (format[i+1] == lst[k].c)
+				if (format[i + 1] == lst[k].c)
 				{
 					flag = 0;
 					lst[k].f(ap);
@@ -35,7 +35,7 @@ int _printf(const char *format, ...)
 				k++;
 			}
 		}
-		if(flag)
+		if (flag)
 		{
 			_putchar(format[i]);
 		}
