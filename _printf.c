@@ -13,7 +13,7 @@ int _printf(const char *format, ...)
 		{'s', print_string}
 	};
 	va_list ap;
-/*TEST*/
+/*TEST*/ /*test*/
 	va_start(ap, format);
 	while (format && *(format + i))
 	{	k = 0;
