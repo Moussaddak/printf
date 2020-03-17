@@ -2,8 +2,8 @@
 #define HOLBERTON_HF
 #include <stdarg.h>
 int _putchar(char c);
-void print_char(va_list p);
-void print_string(va_list p);
+int print_char(va_list p);
+int print_string(va_list p);
 int _printf(const char *format, ...);
 
 /**
@@ -16,6 +16,6 @@ int _printf(const char *format, ...);
 typedef struct list
 {
 	char c;
-	void (*f)(va_list);
+	int (*f)(va_list);
 } list;
 #endif
