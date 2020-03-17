@@ -23,6 +23,7 @@ int _printf(const char *format, ...)
 		{	_putchar('%');
 			nb1++;
 			flag = 0;
+			i++;
 		}
 		else if (format[i] == special_char)
 		{
