@@ -44,7 +44,9 @@ int _printf(const char *format, ...)
 		}
 		i++;
 	}
-	_putchar('\n');
+	i++;
 	va_end(ap);
+	if (!format)
+		return (-1);
 	return (i - (nb1 - 2 * nb2) + st_len);
 }
