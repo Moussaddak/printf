@@ -14,6 +14,10 @@ int _printf(const char *format, ...)
 	va_start(ap, format);
 	while (format && *(format + i))
 	{
+<<<<<<< HEAD
+=======
+		k = 0;
+>>>>>>> 08a0325df58f9f4dce6fae14d0589b65f4533254
 		flag = 1;
 		if (format[i] == special_char &&
 		    (format[i + 1] == special_char || format[i + 1] == '\0'))
@@ -34,11 +38,18 @@ int _printf(const char *format, ...)
 		}
 		if (flag)
 			_putchar(format[i]);
+<<<<<<< HEAD
 		if (format[i] != '\0')
 			i++;
 	}
 	va_end(ap);
 	if (!format)
+=======
+		i++;
+	}
+	va_end(ap);
+	if (format == NULL)
+>>>>>>> 08a0325df58f9f4dce6fae14d0589b65f4533254
 		return (-1);
 	return (i - (nb1 - 2 * nb2) + st_len);
 }
