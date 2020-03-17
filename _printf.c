@@ -14,8 +14,6 @@ int _printf(const char *format, ...)
 	};
 	va_list ap;
 
-	if (!format)
-		return (-1);
 	va_start(ap, format);
 	while (format && *(format + i))
 	{
@@ -26,7 +24,6 @@ int _printf(const char *format, ...)
 		{	_putchar('%');
 			nb1++;
 			flag = 0;
-				return (nb);
 		}
 		else if (format[i] == special_char)
 		{
@@ -47,5 +44,7 @@ int _printf(const char *format, ...)
 		i++;
 	}
 	va_end(ap);
+	if (format == NULL)
+		return (-1);
 	return (i - (nb1 - 2 * nb2) + st_len);
 }
