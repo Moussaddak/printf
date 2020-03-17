@@ -46,4 +46,4 @@ _printf("Hello my name is %s and I am %i years old", name, age);
 .SH SEE ALSO
 printf(3)
 .SH AUTHOR
-Mousadak Meddeb & Mehdi Zaabi
+Mousadak Meddeb & Mahdi Zaabi

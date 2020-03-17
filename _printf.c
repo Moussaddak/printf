@@ -39,12 +39,11 @@ int _printf(const char *format, ...)
 			}
 		}
 		if (flag)
-		{
 			_putchar(format[i]);
-		}
 		i++;
 	}
-	_putchar('\n');
 	va_end(ap);
+	if (!format)
+		return (-1);
 	return (i - (nb1 - 2 * nb2) + st_len);
 }
