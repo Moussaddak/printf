@@ -39,12 +39,9 @@ int _printf(const char *format, ...)
 			}
 		}
 		if (flag)
-		{
 			_putchar(format[i]);
-		}
 		i++;
 	}
-	i++;
 	va_end(ap);
 	if (!format)
 		return (-1);
