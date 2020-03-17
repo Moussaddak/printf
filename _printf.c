@@ -13,15 +13,20 @@ int _printf(const char *format, ...)
 		{'s', print_string}
 	};
 	va_list ap;
+
+	if (!format)
+		return (-1);
 	va_start(ap, format);
 	while (format && *(format + i))
-	{	k = 0;
+	{
+		k = 0;
 		flag = 1;
 		if (format[i] == special_char &&
 		    format[i + 1] == special_char)
 		{	_putchar('%');
 			nb1++;
 			flag = 0;
+				return (nb);
 		}
 		else if (format[i] == special_char)
 		{
@@ -42,7 +47,5 @@ int _printf(const char *format, ...)
 		i++;
 	}
 	va_end(ap);
-	if (!format)
-		return (-1);
 	return (i - (nb1 - 2 * nb2) + st_len);
 }
