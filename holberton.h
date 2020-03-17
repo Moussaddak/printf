@@ -18,4 +18,5 @@ typedef struct list
 	char c;
 	int (*f)(va_list);
 } list;
+int (*get_op_func(char s))(va_list);
 #endif
