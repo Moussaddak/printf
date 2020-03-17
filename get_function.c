@@ -1,9 +1,10 @@
  #include <stdlib.h>
+ #include <unistd.h>
  #include "holberton.h"
 /**
  *print_char - display a character
  *@p: argument
- *Return: 1 number of character
+ *Return: 1
  */
 int print_char(va_list p)
 {
@@ -13,7 +14,7 @@ int print_char(va_list p)
 /**
  *print_string - display a string
  *@p: argument
- *Return: number of character of a string
+ *Return: number of character
  */
 int print_string(va_list p)
 {
@@ -28,6 +29,11 @@ int print_string(va_list p)
 		{
 			_putchar(s[i]);
 		}
+		return (i);
 	}
-	return (i);
+	else
+	{
+		write(1, "(null)", 6);
+		return (6);
+	}
 }
