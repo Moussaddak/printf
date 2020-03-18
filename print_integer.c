@@ -1,38 +1,55 @@
 #include "holberton.h"
+#define ABS(x) ((x) < (0) ? (-(x)) : (x))
 /**
- *print_int - printing an integer
+ *print_int - print an integer
  *@p: input integer argument
- *Return: number of int
+ *Return: n
  */
+ int print_int(va_list p)
+ {
+	int n ,div = 1, i = 1, j, n_i, nb = 0;
+	
+	n = va_arg(p, int);
+	
+	if (n < 0)
+	{
+		_putchar('-');
+		n = ABS(n);
+		nb++;
+	}
+	else if (n == 0)
+	{
+		_putchar('0');
+		return (1);
+	}
 
-int print_int(va_list p)
+	for(; n / div >= 10; div *=10)
+	{
+   		i++;
+	}
+	n_i = i - 2;
+	_putchar((n / _pow(10, i - 1)) + '0');
+	for (j = n_i; j >= 1; j--)
+	{
+		_putchar(((n / _pow(10,j)) % 10) + '0');
+	}
+	_putchar((n % 10) + '0');
+	 
+	return (i + nb); 
+	 
+ }
+ /**
+ *_pow - returns the value of x raised to the power of y
+ *@x: input
+ *@y: input
+ *Return: integer
+ */
+int _pow(int x, int y)
 {
-int long f_number, num = 1, count = 0;
-unsigned int long decimal;
-f_number = va_arg(p, int);
-
-
-if (f_numbber < 0)
-{
-_putchar('-');
-count++;
-f_number = -1 * f_number;
-}
-decimal = f_number;
-/* counting the decimal devider */
-while ((decimal / 10) != 0)
-{
-decimal = decimal / 10;
-dec_num *= 10;
-}
-
-/*substructing the decimal divisions of the number */
-while (dec_num > 0)
-{
-_putchar((f_number / dec_num) +'0');
-count++;
-f_number = f_number % dec_num;
-dec_num = dec_num / 10;
-}
-return (count);
+	if (y == 0)
+		return (1);
+	else if (y < 0)
+		return (-1);
+	else
+		return (x * _pow(x, y - 1));
 }
