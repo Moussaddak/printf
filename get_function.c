@@ -1,11 +1,8 @@
-#include <stdlib.h>
-#include <unistd.h>
-#include "holberton.h"
-#include <stdarg.h>
+ #include "holberton.h"
 /**
  *print_char - display a character
  *@p: argument
- *Return: int
+ *Return: number of char
  */
 int print_char(va_list p)
 {
@@ -15,7 +12,7 @@ int print_char(va_list p)
 /**
  *print_string - display a string
  *@p: argument
- *Return: int
+ *Return: number of char
  */
 int print_string(va_list p)
 {
@@ -37,11 +34,12 @@ int print_string(va_list p)
 		write(1, "(null)", 6);
 		return (6);
 	}
+
 }
 /**
- *get_op_func - selects the correct function to perform the operation
- *@s: input
- *Return: integer
+ *get_op_func - select the right operation
+ *@s: input a character
+ *Return: number of char
  */
 int (*get_op_func(char s))(va_list)
 {
