@@ -1,7 +1,8 @@
  #include "holberton.h"
- /**
+/**
  *print_char - display a character
  *@p: argument
+ *Return: integer number of char
  */
 int print_char(va_list p)
 {
@@ -11,12 +12,13 @@ int print_char(va_list p)
 /**
  *print_string - display a string
  *@p: argument
+ *Return: integer number of char
  */
 int print_string(va_list p)
 {
 	char *s;
 	int i;
-	
+
 	s = va_arg(p, char *);
 
 	if (s != NULL)
@@ -32,16 +34,16 @@ int print_string(va_list p)
 		write(1, "(null)", 6);
 		return (6);
 	}
-	
+
 }
 /**
  *get_op_func - select the right operation
  *@s: input a character
- *Return: number of char 
+ *Return: number of char
  */
 int (*get_op_func(char s))(va_list)
 {
-		list lst[] = {
+	list lst[] = {
 		{'c', print_char},
 		{'s', print_string},
 		{'d', print_int},
