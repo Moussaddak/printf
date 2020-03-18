@@ -14,7 +14,11 @@ int _printf(const char *format, ...)
 	while (format && *(format + i))
 	{
 		flag = 1;
-		if (format[i] == special_char &&
+		if (format[i] == special_char && format[i + 1] == '\0')
+		{
+			return (-1);
+		}
+		else if (format[i] == special_char &&
 		    (format[i + 1] == special_char || format[i + 1] == '\0'))
 		{
 			_putchar('%');
@@ -36,9 +40,7 @@ int _printf(const char *format, ...)
 			_putchar(format[i]);
 		}
 		if (format[i] != '\0')
-		{
 			i++;
-		}
 	}
 	va_end(ap);
 	if (!format)
