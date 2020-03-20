@@ -13,7 +13,7 @@ int print_rot13(va_list p)
 
 	s = va_arg(p, char *);
 
-	if (s != NULL && s[0] != '\0')
+	if (s != NULL)
 	{
 		while (*(s + i) != '\0')
 		{
