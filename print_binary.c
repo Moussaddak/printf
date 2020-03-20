@@ -13,18 +13,32 @@ int print_binary(va_list p)
 	n = va_arg(p, int);
 	i = 2 * n;
 	c = malloc(2);
-	do {
-		i /= 2;
-		c = realloc(c, 2 + j);
-		c[j] = i % 2 + '0';
-		j++;
-	} while (i / 2);
-	rev_string(c);
-	for (k = 0; c[k]; k++)
+	if (c == NULL)
 	{
-		_putchar(c[k]);
+		return (NULL);
 	}
-	return (k);
+	else
+	{
+		do {
+			i /= 2;
+			c = realloc(c, 2 + j);
+			if (c == NULL)
+			{
+				return (NULL);
+			}
+			else
+			{
+				c[j] = i % 2 + '0';
+			}
+			j++;
+		} while (i / 2);
+		rev_string(c);
+		for (k = 0; c[k]; k++)
+		{
+			_putchar(c[k]);
+		}
+		return (k);
+	}
 }
 /**
  *rev_string - prints a string in reverse
