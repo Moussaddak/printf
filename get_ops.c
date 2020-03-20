@@ -6,17 +6,18 @@
  */
 int (*get_op_func(char s))(va_list)
 {
-	list lst[] = {
+		list lst[] = {
 		{'c', print_char},
 		{'s', print_string},
 		{'d', print_int},
 		{'i', print_int},
+		{'b', print_binary},
 		{'R', print_rot13}
 	};
 	int i = 0;
 
 
-	while (i < 5)
+	while (i < 6)
 	{
 		if (s == lst[i].c)
 		{
