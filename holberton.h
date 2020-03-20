@@ -9,6 +9,7 @@ int print_string(va_list p);
 int print_int(va_list p);
 int _printf(const char *format, ...);
 int _pow(int x, int y);
+int print_rot13(va_list p);
 /**
  * struct list - a list of types of arguments.
  * @c: First member
