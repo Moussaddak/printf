@@ -7,38 +7,25 @@ void rev_string(char *s);
  */
 int print_binary(va_list p)
 {
-	int i, k, n, j = 0;
+	unsigned int i, n;
+	int k, j = 0;
 	char *c;
 
 	n = va_arg(p, int);
 	i = 2 * n;
 	c = malloc(2);
-	if (c == NULL)
+	do {
+		i /= 2;
+		c = realloc(c, 2 + j);
+		c[j] = i % 2 + '0';
+		j++;
+	} while (i / 2);
+	rev_string(c);
+	for (k = 0; c[k]; k++)
 	{
-		return (NULL);
+		_putchar(c[k]);
 	}
-	else
-	{
-		do {
-			i /= 2;
-			c = realloc(c, 2 + j);
-			if (c == NULL)
-			{
-				return (NULL);
-			}
-			else
-			{
-				c[j] = i % 2 + '0';
-			}
-			j++;
-		} while (i / 2);
-		rev_string(c);
-		for (k = 0; c[k]; k++)
-		{
-			_putchar(c[k]);
-		}
-		return (k);
-	}
+	return (k);
 }
 /**
  *rev_string - prints a string in reverse
