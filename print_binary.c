@@ -7,7 +7,7 @@ void rev_string(char *s);
  */
 int print_binary(va_list p)
 {
-	unsigned int i, n;
+	long int i, n;
 	int k, j = 0;
 	char *c;
 
