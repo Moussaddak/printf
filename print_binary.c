@@ -9,18 +9,17 @@ int print_binary(va_list p)
 {
 	long int i, n;
 	int k, j = 0;
-	char *c;
+	char c[32] = {0};
 
 	n = va_arg(p, int);
 	i = 2 * n;
-	c = malloc(2);
 	do {
 		i /= 2;
-		c = realloc(c, 2 + j);
 		c[j] = i % 2 + '0';
 		j++;
 
 	} while (i / 2);
+	c[j] = '\0';
 	rev_string(c);
 	for (k = 0; c[k]; k++)
 	{
