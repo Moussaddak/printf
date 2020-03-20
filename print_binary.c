@@ -16,9 +16,9 @@ int print_binary(va_list p)
 	c = malloc(2);
 	do {
 		i /= 2;
-		c = realloc(c, 2 + j);
 		c[j] = i % 2 + '0';
 		j++;
+		c = realloc(c, 2 + j);
 	} while (i / 2);
 	rev_string(c);
 	for (k = 0; c[k]; k++)
