@@ -1,6 +1,6 @@
 #include "holberton.h"
 /**
- *rot13 - encodes a string
+ *print_rot13 - encodes a string
  *@p: input
  *Return: int of number of character
  */
@@ -26,20 +26,19 @@ int print_rot13(va_list p)
 					_putchar(code[j]);
 					flag = 0;
 				}
-				else
+				j++;
+				if (j == 53)
 				{
 					_putchar(s[i]);
 				}
-				j++;
 			}
 			i++;
 		}
-		return (i);
 	}
-	else if (!s[0])
+	else
 	{
-		_putchar(s[0]);
-		return (1);
+		write(1, "(null)", 6);
+		return (6);
 	}
-	return (0);
+	return (i);
 }
