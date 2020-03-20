@@ -10,6 +10,7 @@ int print_string(va_list p);
 int print_int(va_list p);
 int print_rot13(va_list p);
 int print_binary(va_list p);
+int print_rev_str(va_list p);
 int _pow(int x, int y);
 void rev_string(char *s);
 /**
