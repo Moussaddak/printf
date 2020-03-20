@@ -17,7 +17,6 @@ int print_binary(va_list p)
 		i /= 2;
 		c[j] = i % 2 + '0';
 		j++;
-
 	} while (i / 2);
 	c[j] = '\0';
 	rev_string(c);
