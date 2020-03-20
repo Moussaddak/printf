@@ -10,12 +10,13 @@ int (*get_op_func(char s))(va_list)
 		{'c', print_char},
 		{'s', print_string},
 		{'d', print_int},
-		{'i', print_int}
+		{'i', print_int},
+		{'R', print_rot13}
 	};
 	int i = 0;
 
 
-	while (i < 4)
+	while (i < 5)
 	{
 		if (s == lst[i].c)
 		{
