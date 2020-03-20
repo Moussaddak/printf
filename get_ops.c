@@ -12,12 +12,13 @@ int (*get_op_func(char s))(va_list)
 		{'d', print_int},
 		{'i', print_int},
 		{'b', print_binary},
+		{'r', print_rev_str},
 		{'R', print_rot13}
 	};
 	int i = 0;
 
 
-	while (i < 6)
+	while (i < 7)
 	{
 		if (s == lst[i].c)
 		{
