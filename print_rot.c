@@ -4,7 +4,7 @@
  *@p: input
  *Return: int of number of character
  */
-int rot13(va_list p)
+int print_rot13(va_list p)
 {
 	char *s;
 	int i = 0, j, flag = 1;
