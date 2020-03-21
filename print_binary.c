@@ -24,12 +24,11 @@ int print_binary(va_list p)
 		c[j] = i % 2 + '0';
 		j++;
 	} while (i / 2);
-	rev_string(c);
 	if (flag)
 	{
 		negative_binary(c, j);
-		rev_string(c);
 	}
+	rev_string(c);
 	for (k = 0; c[k]; k++)
 	{
 		_putchar(c[k]);
