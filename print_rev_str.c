@@ -1,11 +1,11 @@
 #include "holberton.h"
+void _print_rev_recursion(char *s);
+int _strlen_recursion(char *s);
 /**
  *print_rev_str - prints a string in reverse
  *@p: input
  *Return: int number of char
  */
-void _print_rev_recursion(char *s);
-int _strlen_recursion(char *s);
 int print_rev_str(va_list p)
 {
 	char *str;
@@ -15,7 +15,7 @@ int print_rev_str(va_list p)
 	if (str == NULL)
 	{
 		write(1, "(null)", 1);
-		return (6);	
+		return (6);
 	}
 	else
 	{
