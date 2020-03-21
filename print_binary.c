@@ -16,7 +16,7 @@ int print_binary(va_list p)
 	if (n < 0)
 	{
 		flag = 1;
-    n = ABS(n);
+		n = ABS(n);
 	}
 	i = 2 * n;
 	do {
@@ -24,11 +24,11 @@ int print_binary(va_list p)
 		c[j] = i % 2 + '0';
 		j++;
 	} while (i / 2);
-  rev_string(c);
+	rev_string(c);
 	if (flag)
 	{
 		negative_binary(c, j);
-    rev_string(c);
+		rev_string(c);
 	}
 	for (k = 0; c[k]; k++)
 	{
@@ -65,8 +65,8 @@ void rev_string(char *s)
  *@s: input
  *@i: input
  */
- void negative_binary(char *s, int i)
- {
+void negative_binary(char *s, int i)
+{
 	int x, k = 0, flag = 1;
  
 	for (x = i; x < 32; x++)
@@ -82,7 +82,7 @@ void rev_string(char *s)
 		else
 		{
 			s[x] = '0';
-		} 
+		}
 	}
 	while (flag && k < 32)
 	{
@@ -103,5 +103,5 @@ void rev_string(char *s)
 		}
 		k++;
 	}
-  s[32] ='\0';
- }
+	s[32] ='\0';
+}
