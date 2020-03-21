@@ -7,7 +7,8 @@
  */
 int print_int(va_list p)
 {
-	int n, div = 1, i = 1, j, n_i, nb = 0;
+	int div = 1, i = 1, j, n_i, nb = 0;
+	long int n;
 
 	n = va_arg(p, int);
 
