@@ -18,12 +18,11 @@ int print_int(va_list p)
 		n = ABS(n);
 		nb++;
 	}
-	else if (n == 0)
+	if (n >= 0 && n <= 9)
 	{
-		_putchar('0');
-		return (1);
+		_putchar(n + '0');
+		return (1 + nb);
 	}
-
 	for (; n / div >= 10; div *= 10)
 	{
 		i++;
