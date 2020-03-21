@@ -4,26 +4,47 @@
  *@p: input
  *Return: int number of char
  */
+void _print_rev_recursion(char *s);
+int _strlen_recursion(char *s);
 int print_rev_str(va_list p)
 {
-	int len = 0, i;
-	char *e, k, *s;
+	char *str;
 
-	s = va_arg(p, char *);
-	e = s;
-	while (*e != '\0')
+	str = va_arg(p, char *);
+
+	if (str == NULL)
 	{
-		e++;
-		len++;
+		write(1, "(null)", 1);
+		return (6);	
 	}
-	e--;
-	for (i = 0; i < (len / 2); i++)
+	else
 	{
-		k = *e;
-		*e = *s;
-		*s = k;
-		s++;
-		e--;
+		_print_rev_recursion(str);
 	}
-	return (len);
+	return (_strlen_recursion(str));
+}
+/**
+ *_print_rev_recursion - prints a string in reverse recursively
+ *@s: input
+ */
+void _print_rev_recursion(char *s)
+{
+
+	if (*s)
+	{
+		_print_rev_recursion(s + 1);
+		_putchar(*s);
+	}
+}
+/**
+ *_strlen_recursion - prints the length of a string
+ *@s: input
+ *Return: integer
+ */
+int _strlen_recursion(char *s)
+{
+	if (*s == '\0')
+		return (0);
+	else
+		return (1 + _strlen_recursion(s + 1));
 }
