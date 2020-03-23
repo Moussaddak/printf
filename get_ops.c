@@ -13,7 +13,8 @@ int (*get_op_func(char s))(va_list)
 		{'i', print_int},
 		{'b', print_binary},
 		{'r', print_rev_str},
-		{'R', print_rot13}
+		{'R', print_rot13},
+		{'0', print_int}
 	};
 	int i = 0;
 
