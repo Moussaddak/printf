@@ -19,7 +19,7 @@ int (*get_op_func(char s))(va_list)
 	int i = 0;
 
 
-	while (i < 7)
+	while (i < 8)
 	{
 		if (s == lst[i].c)
 		{
