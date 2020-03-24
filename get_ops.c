@@ -16,7 +16,7 @@ int (*get_op_func(char s))(va_list)
 		{'R', print_rot13},
 		{'0', print_int},
 		{'h', print_int},
-		{'l', print_int},	
+		{'l', print_int}
 	};
 	int i = 0;
 
