@@ -43,6 +43,7 @@ void rev_string(char *s)
 {
 	int len = 0, i;
 	char *e, k;
+
 	e = s;
 	while (*e != '\0')
 	{
@@ -67,7 +68,7 @@ void rev_string(char *s)
 void negative_binary(char *s, int i)
 {
 	int x, k = 0, flag = 1;
- 
+
 	for (x = i; x < 32; x++)
 	{
 		s[x] = '0';
@@ -102,5 +103,5 @@ void negative_binary(char *s, int i)
 		}
 		k++;
 	}
-	s[32] ='\0';
+	s[32] = '\0';
 }
